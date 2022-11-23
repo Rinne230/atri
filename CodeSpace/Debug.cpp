@@ -1,10 +1,9 @@
 #include <iostream>
 using namespace std;
 int fun(int *num1, int *num2 ){
-    int c;
-    for (c = *num1; c >= 1; --c)
-        if (*num1 % c == 0 && *num2 % c == 0) break;
-    return c;
+    if(*num2 == 0) return *num1;
+    *num1 = *num1 % *num2;
+    return fun(num2, num1);
 }
 int main(){		
 	int a, num1,num2;
